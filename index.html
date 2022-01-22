@@ -1,0 +1,16 @@
+<script src="assets/js/main.js"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+<div id="body">
+  <div class="grid-container">
+    <div class="grid-item" style="background-color: red" onclick="playSound(0)"></div>
+    <div class="grid-item" style="background-color: blue" onclick="playSound(1)"></div>
+    <div class="grid-item" style="background-color: green" onclick="playSound(2)"></div>
+    <div class="grid-item" style="background-color: purple" onclick="playSound(3)"></div>
+    <div class="grid-item" style="background-color: yellow" onclick="playSound(4)"></div>
+    <div class="grid-item" style="background-color: magenta" onclick="playSound(5)"></div>
+  </div>
+  <audio id="sound" src="audio/Elephant.mp3"></audio>
+</div>
+<script type="text/javascript">
+  shuffle(soundList);
+</script>
