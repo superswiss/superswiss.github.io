@@ -1,0 +1,75 @@
+<!-- <script src="assets/js/main.js"></script>
+<link rel="stylesheet" href="assets/css/style.css"> -->
+<style type="text/css">
+  body, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ccc;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  height: 100%;
+  /*padding: 10px;*/
+}
+
+.grid-item {
+  /*background-color: rgba(255, 255, 255, 0.8);*/
+  border: 5px solid rgb(106 179 154 / 90%);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.grid-item:hover {
+  /*background-color: rgba(255, 255, 255, 0.8);*/
+  border: 5px solid #fb8ee6;
+}
+</style>
+<div id="body">
+  <div class="grid-container">
+    <div class="grid-item" style="background-color: red" onclick="playSound(0)"></div>
+    <div class="grid-item" style="background-color: blue" onclick="playSound(1)"></div>
+    <div class="grid-item" style="background-color: green" onclick="playSound(2)"></div>
+    <div class="grid-item" style="background-color: purple" onclick="playSound(3)"></div>
+    <div class="grid-item" style="background-color: yellow" onclick="playSound(4)"></div>
+    <div class="grid-item" style="background-color: magenta" onclick="playSound(5)"></div>
+  </div>
+  <audio id="sound" src="audio/Elephant.mp3"></audio>
+</div>
+<script type="text/javascript">
+  var soundList = [
+  "Ape.wav",
+  "Elephant.mp3",
+  "Frog.mp3",
+  "jungle beat.mp3",
+  "Lion.mp3",
+  "Snake.mp3"
+  ];
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
+  }
+  function playSound(num) {
+    document.getElementById("sound").src = "audio/"+ soundList[num];
+    document.getElementById("sound").play();
+  }
+  shuffle(soundList);
+</script>
